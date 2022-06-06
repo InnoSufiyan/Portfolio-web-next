@@ -61,7 +61,7 @@ function ImgSlider() {
         <Carousel {...settings}>
             {
                 sliderss?.map((item, index) => (
-                    <Wrap>
+                    <Wrap key={index}>
                         <img src={urlFor(item?.slider).width(3200).url()} />
                     </Wrap>
                 ))
