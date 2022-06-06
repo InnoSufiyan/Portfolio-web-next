@@ -38,14 +38,14 @@ function Detail({post}) {
                             <img src={urlFor(item.titleImg).width(400).url()} />
                         </ImageTitle>
                         <Controls>
-                            <a href={item?.webLink} rel="noopener">
+                            <a href={item?.webLink} target='_blank' rel="noopener">
 
                                 <PlayButton>
                                     <img src="/images/play-icon-black.png" />
                                     <span>Play</span>
                                 </PlayButton>
                             </a>
-                            <a href={item?.portfolioLink} rel="noopener">
+                            <a href={item?.portfolioLink} target='_blank' rel="noopener">
                                 <TrailerButton>
                                     <img src="/images/play-icon-white.png" />
                                     <span>{item?.postType == "websites" ? "Github" : "Behance"}</span>
