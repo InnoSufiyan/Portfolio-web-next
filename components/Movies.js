@@ -52,8 +52,9 @@ function Movies({ data }) {
 export default Movies;
 
 const Container = styled.div`
+  padding: 0 70px 70px 70px;
   @media (max-width: 768px) {
-    padding: 0 70px 70px 70px;
+    padding: 0;
   }
 `;
 const Content = styled.div`
