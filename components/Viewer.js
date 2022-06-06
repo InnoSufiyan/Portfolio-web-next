@@ -15,9 +15,9 @@ function Viewers() {
     return (
         <Container>
             <Wrap style={{
-                transform: selected == "Animation" ? "scale(1.05)" : "",
-                borderColor: selected == "Animation" ? "rgba(249, 249, 249, 0.8)" : "",
-                boxShadow: selected == "Animation" ? "rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 /72%) 0px 30px 22px -10px" : ""
+                transform: selected == "" ? "scale(1.05)" : "",
+                borderColor: selected == "" ? "rgba(249, 249, 249, 0.8)" : "",
+                boxShadow: selected == "" ? "rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 /72%) 0px 30px 22px -10px" : ""
             }} onClick={() => submitHandler("")}>
                 <img src="/images/All.png" />
                 <video muted={true} autoPlay={true} loop={true} playsInLine={true}>

@@ -4,24 +4,26 @@ import styles from '../styles/Home.module.css'
 import styled from 'styled-components'
 
 
-function Login() {
+function About() {
     return (
         <>
             <Container>
                 <Cta>
-                    <LogoOne src="/images/cta-logo-onee copy.png" />
+                    <Image src="/images/cta-logo-onee copy.png" width="500%" height="100%" />
+                    {/* <LogoOne src="/images/cta-logo-onee copy.png" /> */}
                     <Signup>Get All There</Signup>
                     <Description>
                         I'm an Animator/Motion Graphics Artist and a Web developer, based in Karachi, Pakistan, I have serious Passion for UI Effects, Animations and I really love to Code.
                     </Description>
-                    <LogoTwo src="/images/cta-logo-twoo.png" />
+                    <Image src="/images/cta-logo-twoo.png" width="500%" height="40%" />
+                    {/* <LogoTwo src="/images/cta-logo-twoo.png" /> */}
                 </Cta>
             </Container>
         </>
     )
 }
 
-export default Login
+export default About
 
 const Container = styled.div`
     position: relative;

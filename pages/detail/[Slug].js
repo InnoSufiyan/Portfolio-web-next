@@ -14,44 +14,21 @@ function urlFor(source) {
 }
 
 
-function Detail() {
+function Detail({post}) {
     const dispatch = useDispatch()
     const dataa = useSelector(selectPortfolio)
 
-    const router = useRouter()
-    console.log(router)
-
-    const { Slug } = router.query
-
-    console.log(Slug)
-
     useEffect(() => {
-
-        sanityClient.fetch(
-            `
-            *[_type=="post" && _id == "${Slug}" ] {
-                _id,
-  title,
-  slug,
-  subTitle,
-  titleImg,
-  backgroundImage,
-  cardImg,
-  publishedAt,
-  description,
-  postType,
-  webLink,
-  portfolioLink
-              }
-            `
-        ).then((data) => dispatch(setPortfolio((data))))
-            .catch(console.error)
+        console.log("Blah Blah")
+        console.log(post)
+        dispatch(setPortfolio(post))
+        console.log("Blah Blah")
     }, [])
 
     return (
         <Container>
             {
-                dataa?.filter((item) => item?._id == Slug)?.map((item, index) => (
+                dataa?.map((item, index) => (
                     <>
                         <Background>
                             <img src={urlFor(item.backgroundImage).width(3200).url()} />
@@ -71,7 +48,7 @@ function Detail() {
                             <a href={item?.portfolioLink} target='_blank'>
                                 <TrailerButton>
                                     <img src="/images/play-icon-white.png" />
-                                    <span>Behance</span>
+                                    <span>{item?.postType == "websites" ? "Github" : "Behance"}</span>
                                 </TrailerButton>
                             </a>
                             <AddButton>
@@ -98,6 +75,36 @@ function Detail() {
 
 export default Detail
 
+export const getServerSideProps = async (context) => {
+    const {Slug} = context.query
+    console.log(Slug)
+    const query = `
+    *[_type=="post" && _id == "${Slug}" ] {
+        _id,
+title,
+slug,
+subTitle,
+titleImg,
+backgroundImage,
+cardImg,
+publishedAt,
+description,
+postType,
+webLink,
+portfolioLink
+      }`;
+
+        const post = await sanityClient.fetch(query);
+
+
+
+    return {
+        props: {
+            post,
+        }
+    }
+}
+
 
 const Container = styled.div`
     min-height : calc(100vh - 70px);
@@ -111,7 +118,7 @@ const Background = styled.div`
     bottom : 0;
     right: 0;
     left : 0;
-    z-index : -1;
+    z-index : 0;
     opacity: 0.8;
     img {
         width: 100%;
@@ -129,6 +136,7 @@ const ImageTitle = styled.div`
     width: 35vw;
     min-width: 200px;
     margin : 60px 0;
+    position: relative;
     img {
         // width: 100%;
         height: 100%;
@@ -139,6 +147,7 @@ const ImageTitle = styled.div`
 const Controls = styled.div`
     display: flex;
     align-items: center;
+    position: relative;
     
     a {
         text-decoration: none;
@@ -157,6 +166,8 @@ const PlayButton = styled.button`
     border: none;
     letter-spacing: 1.8px;
     cursor: pointer;
+    position: relative;
+
     &:hover {
         background-color : rgb(198,198,198);
     }
@@ -200,6 +211,8 @@ const SubTitle = styled.div`
     font-size: 15px;
     min-height: 20px;
     margin-top: 26px;
+    position: relative;
+
     @media (max-width: 768px) {
         font-size: 12px
     }
@@ -210,6 +223,8 @@ const Description = styled.div`
     margin-top: 16px;
     color: rgb(249,249,249);
     max-width: 760px;
+    position: relative;
+
     @media (max-width: 768px) {
         font-size: 14px
     }

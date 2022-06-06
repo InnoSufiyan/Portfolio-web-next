@@ -10,7 +10,10 @@ function Header() {
     return (
         <Nav>
             <Link href='/'>
-                <Logo src="/images/MyLogo.png" />
+                {/* <Logo src="/images/MyLogo.png" /> */}
+                <a>
+                    <Image src="/images/MyLogo.png" width="80px" height="40px" />
+                </a>
             </Link>
             <NavMenu>
                 <div>
@@ -22,16 +25,17 @@ function Header() {
                     </Link>
                 </div>
                 <div>
-                    <Link href='/login'>
+                    <Link href='/about'>
                         <img src="/images/original-icon.svg" />
                     </Link>
-                    <Link href='/login'>
+                    <Link href='/about'>
                         <span>About Me</span>
                     </Link>
                 </div>
             </NavMenu>
-            <Link href='/login'>
-                <UserImg src="https://yt3.ggpht.com/ytc/AKedOLQADltt0SdHv64U08B5zuCISyIJjy4wgorAHTdhtw=s900-c-k-c0x00ffffff-no-rj" />
+            <Link href='/about'>
+                <Image className='profile-pic' src="/images/unnamed.jpg" width="48px" height="48px" />
+                {/* <UserImg src="https://yt3.ggpht.com/ytc/AKedOLQADltt0SdHv64U08B5zuCISyIJjy4wgorAHTdhtw=s900-c-k-c0x00ffffff-no-rj" /> */}
             </Link>
         </Nav>
     )
@@ -50,10 +54,17 @@ const Nav = styled.nav`
     padding: 0 36px;
     overflow-x : hidden;
     justify-content: space-between;
-`
+    position: relative;
+    z-index: 1;
 
-const Logo = styled.img`
-    width: 80px;
+    .profile-pic {
+        border-radius: 50%;
+    cursor : pointer;
+    }
+
+    a {
+        cursor: pointer;
+    }
 `
 
 const NavMenu = styled.div`
@@ -104,6 +115,4 @@ const NavMenu = styled.div`
 const UserImg = styled.img`
     height : 48px;
     width : 48px;
-    border-radius: 50%;
-    cursor : pointer;
 `
