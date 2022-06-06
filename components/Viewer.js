@@ -49,7 +49,7 @@ function Viewers() {
                 borderColor: selected == "mobile-apps" ? "rgba(249, 249, 249, 0.8)" : "",
                 boxShadow: selected == "mobile-apps" ? "rgb(0 0 0 / 80%) 0px 40px 58px -16px, rgb(0 0 0 /72%) 0px 30px 22px -10px" : ""
             }} onClick={() => submitHandler("mobile-apps")}>
-                <img src="/images/mobile-apps.png" />
+                <img src="/images/mobileapps.png" />
                 <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
                     <source src='/videos/1564674844-disney.mp4' type='video/mp4' />
                 </video>
@@ -65,7 +65,7 @@ const Container = styled.div`
     margin-top : 36px;
     display : grid;
     grid-gap: 25px;
-    padding : 30px 0px 26px; 
+    padding : 30px 40px 26px 40px; 
     grid-template-columns : repeat(4, minmax(0, 1fr));
     @media (max-width: 768px) {
         grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -9,12 +9,12 @@ function About() {
         <>
             <Container>
                 <Cta>
-                    <Image src="/images/cta-logo-onee copy.png" width="500%" height="100%"  alt="logo one" />
+                    <Image src="/images/cta-logo-onee copy.png" width="500%" height="110%" alt="logo one" />
                     <Signup>Get All There</Signup>
                     <Description>
                         I&apos;m an Animator/Motion Graphics Artist and a Web developer, based in Karachi, Pakistan, I have serious Passion for UI Effects, Animations and I really love to Code.
                     </Description>
-                    <Image src="/images/cta-logo-twoo.png" width="500%" height="40%" alt="logo two" />
+                    <Image src="/images/cta-logo-twoo.png" width="600%" height="40%" alt="logo two" />
                 </Cta>
             </Container>
         </>
@@ -55,10 +55,14 @@ const Cta = styled.div`
     z-index : 2;
 `
 const Description = styled.p`
-    font-size: 11px;
+    font-size: 15px;
     line-spacing: 1.5px;
     text-align: center;
     line-height: 1.5;
+
+    @media (max-width: 768px) {
+        font-size: 11px;
+    }
 `
 const Signup = styled.a`
     width: 100%;

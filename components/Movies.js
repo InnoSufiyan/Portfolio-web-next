@@ -47,6 +47,7 @@ export default Movies
 
 
 const Container = styled.div`
+    padding: 0 70px 70px 70px;
     
 `
 const Content = styled.div`
