@@ -70,7 +70,7 @@ function Detail({ post }) {
                         </SubTitle>
                         <Description>
                             {item?.description?.map((item, index)=> (
-                                <p>
+                                <p key={index}>
                                     {item.children[0].text}
                                 </p>
                             ))}
