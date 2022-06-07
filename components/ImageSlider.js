@@ -63,7 +63,7 @@ function ImgSlider() {
             {
                 sliderss?.map((item, index) => (
                     <Wrap key={index}>
-                        <Image className='forSlider' src={urlFor(item?.slider).width(3200).url()} width="600" height="200" layout='responsive' objectFit='cover' />
+                        <Image className='forSlider' src={urlFor(item?.slider).width(3200).url()} width="600" height="150" layout='responsive' objectFit='cover' />
                         {/* <img src={urlFor(item?.slider).width(3200).url()} /> */}
                     </Wrap>
                 ))

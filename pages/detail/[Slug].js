@@ -36,10 +36,15 @@ function Detail({ post }) {
                             {/* <img src={urlFor(item.backgroundImage).width(3200).url()} /> */}
                         </Background>
 
-                        <ImageTitle>
-                            <Image src={urlFor(item.titleImg).width(400).url()} width="250" height="300" objectFit='contain' />
-                            {/* <img src={urlFor(item.titleImg).width(400).url()} /> */}
-                        </ImageTitle>
+                        {
+                            item?.titleImg && (
+                                <ImageTitle>
+                                    <Image src={urlFor(item.titleImg).width(400).url()} width="250" height="300" objectFit='contain' />
+                                    {/* <img src={urlFor(item.titleImg).width(400).url()} /> */}
+                                </ImageTitle>
+                            )
+                        }
+
                         <Controls>
                             <a href={item?.webLink} target='_blank' rel="noopener noreferrer">
 
@@ -69,7 +74,7 @@ function Detail({ post }) {
                             {item?.subTitle}
                         </SubTitle>
                         <Description>
-                            {item?.description?.map((item, index)=> (
+                            {item?.description?.map((item, index) => (
                                 <p key={index}>
                                     {item.children[0].text}
                                 </p>
