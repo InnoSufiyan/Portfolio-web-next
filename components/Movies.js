@@ -40,7 +40,7 @@ function Movies({ data }) {
             <Link key={index} href={`/detail/${item?._id}`}>
               <Wrap>
                 {/* <div> */}
-                  <Image src={urlFor(item?.cardImg).width(3200).url()} width="400" height="200" objectFit="cover" />
+                  <Image src={urlFor(item?.cardImg).width(3200).url()} width="350" height="200" objectFit="cover" layout="responsive" />
                 {/* </div> */}
                 {/* <img src={urlFor(item?.cardImg).width(3200).url()} /> */}
               </Wrap>
@@ -54,7 +54,7 @@ function Movies({ data }) {
 export default Movies;
 
 const Container = styled.div`
-  padding: 0 70px 70px 70px;
+  padding: 0 50px 70px 50px;
   @media (max-width: 768px) {
     padding: 0;
   }

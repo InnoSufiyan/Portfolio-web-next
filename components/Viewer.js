@@ -46,7 +46,7 @@ function Viewers() {
       >
         <img src="/images/Animation.png" />
         <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
-          <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
+          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
         </video>
       </Wrap>
       <Wrap
@@ -62,7 +62,7 @@ function Viewers() {
       >
         <img src="/images/websites.png" />
         <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
-          <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
+          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
         </video>
       </Wrap>
       <Wrap
@@ -79,7 +79,7 @@ function Viewers() {
       >
         <img src="/images/mobileapps.png" />
         <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
-          <source src="/videos/1564674844-disney.mp4" type="video/mp4" />
+          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
         </video>
       </Wrap>
     </Container>
@@ -92,7 +92,7 @@ const Container = styled.div`
   margin-top: 36px;
   display: grid;
   grid-gap: 25px;
-  padding: 30px 40px 26px 40px;
+  padding: 30px 50px 26px 50px;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
