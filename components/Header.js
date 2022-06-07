@@ -32,6 +32,16 @@ function Header() {
                         <span>About Me</span>
                     </Link>
                 </div>
+                <div>
+                    <a href='https://www.linkedin.com/in/innosufiyan/' target='_blank' rel="noopener noreferrer">
+                        <span>Linkedin</span>
+                    </a>
+                </div>
+                <div>
+                    <a href='https://github.com/InnoSufiyan' target='_blank' rel="noopener noreferrer">
+                        <span>Github</span>
+                    </a>
+                </div>
             </NavMenu>
             <Link href='/about'>
                 <Image className='profile-pic' src="/images/unnamed.jpg" width="48px" height="48px" />
