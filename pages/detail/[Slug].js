@@ -69,7 +69,11 @@ function Detail({ post }) {
                             {item?.subTitle}
                         </SubTitle>
                         <Description>
-                            {item?.description[0].children[0].text}
+                            {item?.description?.map((item, index)=> (
+                                <p>
+                                    {item.children[0].text}
+                                </p>
+                            ))}
                         </Description>
                     </>
                 ))
