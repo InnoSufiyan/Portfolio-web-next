@@ -51,7 +51,7 @@ function Detail({post}) {
                             <a href={item?.portfolioLink} target='_blank' rel="noopener noreferrer">
                                 <TrailerButton>
                                     <img src="/images/play-icon-white.png" />
-                                    <span>{item?.postType == "websites" ? "Github" : "Behance"}</span>
+                                    <span>{item?.postType == "websites" || item?.postType == "mobile-apps" ? "Github" : "Behance"}</span>
                                 </TrailerButton>
                             </a>
                             <AddButton>
