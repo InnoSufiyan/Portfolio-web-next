@@ -10,7 +10,7 @@ function About() {
             <Container>
                 <Cta>
                     <Image src="/images/cta-logo-onee copy.png" width="500%" height="110%" alt="logo one" />
-                    <Signup>Get In Touch</Signup>
+                    <Signup><a href="/images/Sufiyan - Full Stack Developer.pdf" download>Get In Touch</a></Signup>
                     <Description>
                         I&apos;m an Animator/Motion Graphics Artist and a Web developer, based in Karachi, Pakistan, I have serious Passion for UI Effects, Animations and I really love to Code.
                     </Description>
