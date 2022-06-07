@@ -10,7 +10,8 @@ function About() {
             <Container>
                 <Cta>
                     <Image src="/images/cta-logo-onee copy.png" width="500%" height="110%" alt="logo one" />
-                    <Signup href="/images/Sufiyan - Full Stack Developer.pdf" download>Get In Touch</Signup>
+                    <Signup href="https://www.linkedin.com/in/innosufiyan/" target="_blank">Get In Touch</Signup>
+                    <Cv href="/images/Sufiyan - Full Stack Developer.pdf" download>Download My CV</Cv>
                     <Description>
                         I&apos;m an Animator/Motion Graphics Artist and a Web developer, based in Karachi, Pakistan, I have serious Passion for UI Effects, Animations and I really love to Code.
                     </Description>
@@ -80,5 +81,23 @@ const Signup = styled.a`
     margin-bottom: 12px;
     &:hover {
         background : #0483ee;
+    }
+`
+const Cv = styled.a`
+    width: 100%;
+    background-color: #f9f9f9;
+    font-weight: bold;
+    padding: 17px 0px;
+    color: #0063e5;
+    border-radius: 4px;
+    text-align : center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 250ms;
+    letter-spacing: 1.5px;
+    margin-top: 8px;
+    margin-bottom: 12px;
+    &:hover {
+        background : #ffffff;
     }
 `
