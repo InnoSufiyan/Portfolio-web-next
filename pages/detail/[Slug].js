@@ -15,7 +15,7 @@ function urlFor(source) {
 }
 
 
-function Detail({post}) {
+function Detail({ post }) {
     const dispatch = useDispatch()
     const dataa = useSelector(selectPortfolio)
 
@@ -48,12 +48,16 @@ function Detail({post}) {
                                     <span>Play</span>
                                 </PlayButton>
                             </a>
-                            <a href={item?.portfolioLink} target='_blank' rel="noopener noreferrer">
-                                <TrailerButton>
-                                    <img src="/images/play-icon-white.png" />
-                                    <span>{item?.postType == "websites" || item?.postType == "mobile-apps" ? "Github" : "Behance"}</span>
-                                </TrailerButton>
-                            </a>
+                            {
+                                item?.portfolioLink && (
+                                    <a href={item?.portfolioLink} target='_blank' rel="noopener noreferrer">
+                                        <TrailerButton>
+                                            <img src="/images/play-icon-white.png" />
+                                            <span>{item?.postType == "websites" || item?.postType == "mobile-apps" ? "Github" : "Behance"}</span>
+                                        </TrailerButton>
+                                    </a>
+                                )
+                            }
                             <AddButton>
                                 <span>+</span>
                             </AddButton>
@@ -79,7 +83,7 @@ function Detail({post}) {
 export default Detail
 
 export const getServerSideProps = async (context) => {
-    const {Slug} = context.query
+    const { Slug } = context.query
     console.log(Slug)
     const query = `
     *[_type=="post" && _id == "${Slug}" ] {
@@ -97,7 +101,7 @@ webLink,
 portfolioLink
       }`;
 
-        const post = await sanityClient.fetch(query);
+    const post = await sanityClient.fetch(query);
 
 
 
