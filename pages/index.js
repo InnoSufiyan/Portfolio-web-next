@@ -9,6 +9,8 @@ import { useEffect } from 'react'
 import { setPortfolios, setSlider } from '../features/portfolio/portfolioSlice'
 import Viewers from '../components/Viewer'
 import Movies from '../components/Movies'
+import { fetchSlider } from '../utils/fetchSlider'
+import { fetchPosts } from '../utils/fetchPosts'
 
 export default function Home({ posts, slider }) {
 
@@ -33,7 +35,11 @@ export default function Home({ posts, slider }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (context) => {
+
+  // const posts = await fetchPosts();
+  // const slider = await fetchSlider();
+
   const query = `
   *[_type == "post"] {
     _id,

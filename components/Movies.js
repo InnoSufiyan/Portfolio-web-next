@@ -8,6 +8,7 @@ import {
   selectPortfolios,
 } from "../features/portfolio/portfolioSlice";
 import Link from "next/link";
+import Image from "next/image";
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -19,18 +20,16 @@ function Movies({ data }) {
   const dataa = useSelector(selectPortfolios);
   const filter = useSelector(selectFilter);
 
-  console.log(dataa[0]?.postType);
-
   return (
     <Container>
       <h4>
         {filter === ""
           ? "All Projects"
           : "animation" == filter.toLowerCase()
-          ? "All Animation Projects"
-          : "websites" == filter.toLowerCase()
-          ? "All Website Projects"
-          : "All Mobile App Projects"}
+            ? "All Animation Projects"
+            : "websites" == filter.toLowerCase()
+              ? "All Website Projects"
+              : "All Mobile App Projects"}
       </h4>
       <Content>
         {dataa
@@ -40,7 +39,10 @@ function Movies({ data }) {
           ?.map((item, index) => (
             <Link key={index} href={`/detail/${item?._id}`}>
               <Wrap>
-                <img src={urlFor(item?.cardImg).width(3200).url()} />
+                {/* <div> */}
+                  <Image src={urlFor(item?.cardImg).width(3200).url()} width="400" height="200" objectFit="cover" />
+                {/* </div> */}
+                {/* <img src={urlFor(item?.cardImg).width(3200).url()} /> */}
               </Wrap>
             </Link>
           ))}

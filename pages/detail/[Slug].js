@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 
 import imageUrlBuilder from "@sanity/image-url";
 import { selectPortfolio, setPortfolio } from '../../features/portfolio/portfolioSlice';
+import Image from 'next/image';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -31,11 +32,13 @@ function Detail({post}) {
                 dataa?.map((item, index) => (
                     <>
                         <Background>
-                            <img src={urlFor(item.backgroundImage).width(3200).url()} />
+                            <Image src={urlFor(item.backgroundImage).width(3200).url()} width="100" height="100" objectFit='cover' layout="fill" />
+                            {/* <img src={urlFor(item.backgroundImage).width(3200).url()} /> */}
                         </Background>
 
                         <ImageTitle>
-                            <img src={urlFor(item.titleImg).width(400).url()} />
+                            <Image src={urlFor(item.titleImg).width(400).url()} width="250" height="300" objectFit='contain' />
+                            {/* <img src={urlFor(item.titleImg).width(400).url()} /> */}
                         </ImageTitle>
                         <Controls>
                             <a href={item?.webLink} target='_blank' rel="noopener noreferrer">

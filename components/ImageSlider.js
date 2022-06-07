@@ -7,6 +7,7 @@ import sanityClient from '../Client'
 import imageUrlBuilder from "@sanity/image-url";
 import { useSelector } from 'react-redux';
 import { selectSlider } from '../features/portfolio/portfolioSlice';
+import Image from 'next/image';
 
 const builder = imageUrlBuilder(sanityClient);
 
@@ -15,7 +16,7 @@ function urlFor(source) {
 }
 
 function ImgSlider() {
-    
+
     const sliderss = useSelector(selectSlider)
 
     function SampleNextArrow(props) {
@@ -23,7 +24,7 @@ function ImgSlider() {
         return (
             <div
                 className={className}
-                style={{ ...style, display: "block", right: 35}}
+                style={{ ...style, display: "block", right: 35 }}
                 onClick={onClick}
             />
         );
@@ -34,7 +35,7 @@ function ImgSlider() {
         return (
             <div
                 className={className}
-                style={{ ...style, display: "block", left: 35, zIndex: 2}}
+                style={{ ...style, display: "block", left: 35, zIndex: 2 }}
                 onClick={onClick}
             />
         );
@@ -62,7 +63,8 @@ function ImgSlider() {
             {
                 sliderss?.map((item, index) => (
                     <Wrap key={index}>
-                        <img src={urlFor(item?.slider).width(3200).url()} />
+                        <Image className='forSlider' src={urlFor(item?.slider).width(3200).url()} width="1750" height="500" />
+                        {/* <img src={urlFor(item?.slider).width(3200).url()} /> */}
                     </Wrap>
                 ))
             }
@@ -94,15 +96,11 @@ const Carousel = styled(Slider)`
 
 const Wrap = styled.div`
 cursor : pointer;
-    img {
         border : 4px solid transparent;
-        width : 100%;
-        height : 100%;
         border-radius : 4px;
         box-shadow : rgb(0 0 0 / 69%) 0px 26px 30px -10px, rgb( 0 0 0 / 73%) 0px 16px 10px -10px;
         transition-duration : 300ms;
         &:hover {
             border : 4px solid rgba(249, 249, 249, 0.8);
         }
-    }
 `
