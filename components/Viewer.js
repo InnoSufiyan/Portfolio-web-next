@@ -25,12 +25,6 @@ function Viewers() {
         onClick={() => submitHandler("")}
       >
         <img src="/images/All.png" />
-        <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
-          <source
-            src="/videos/Showreel-2015-2016-(540p).mp4"
-            type="video/mp4"
-          />
-        </video>
       </Wrap>
       <Wrap
         style={{
@@ -46,7 +40,10 @@ function Viewers() {
       >
         <img src="/images/Animation.png" />
         <video muted={true} autoPlay={true} loop={true} playsInLine={true}>
-          <source src="/videos/1564676714-pixar.mp4" type="video/mp4" />
+          <source
+            src="/videos/Showreel-2015-2016-(540p).mp4"
+            type="video/mp4"
+          />
         </video>
       </Wrap>
       <Wrap
